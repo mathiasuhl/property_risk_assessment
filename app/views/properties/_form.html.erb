@@ -1,0 +1,31 @@
+<%= simple_form_for(@property) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :name %>
+    <%= f.input :zip %>
+    <%= f.input :year_of_construction %>
+    <%= f.input :owner %>
+    <%= f.input :company %>
+    <%= f.input :asset_management %>
+    <%= f.input :property_management %>
+    <%= f.input :service_provider %>
+    <%= f.input :has_garage %>
+    <%= f.input :calc_of_rentable_area %>
+    <%= f.input :plans %>
+    <%= f.input :lightning_protection_level %>
+    <%= f.input :has_land_register_record %>
+    <%= f.input :has_spezification %>
+    <%= f.input :planning_permission %>
+    <%= f.input :has_energy_pass %>
+    <%= f.input :has_fire_protection_plan %>
+    <%= f.association :tanant %>
+    <%= f.association :insurance %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

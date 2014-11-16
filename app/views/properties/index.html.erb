@@ -1,0 +1,65 @@
+<h1>Listing properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>City</th>
+      <th>Name</th>
+      <th>Zip</th>
+      <th>Year of construction</th>
+      <th>Owner</th>
+      <th>Company</th>
+      <th>Asset management</th>
+      <th>Property management</th>
+      <th>Service provider</th>
+      <th>Has garage</th>
+      <th>Calc of rentable area</th>
+      <th>Plans</th>
+      <th>Lightning protection level</th>
+      <th>Has land register record</th>
+      <th>Has spezification</th>
+      <th>Planning permission</th>
+      <th>Has energy pass</th>
+      <th>Has fire protection plan</th>
+      <th>Tanant</th>
+      <th>Insurance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.address %></td>
+        <td><%= property.city %></td>
+        <td><%= property.name %></td>
+        <td><%= property.zip %></td>
+        <td><%= property.year_of_construction %></td>
+        <td><%= property.owner %></td>
+        <td><%= property.company %></td>
+        <td><%= property.asset_management %></td>
+        <td><%= property.property_management %></td>
+        <td><%= property.service_provider %></td>
+        <td><%= property.has_garage %></td>
+        <td><%= property.calc_of_rentable_area %></td>
+        <td><%= property.plans %></td>
+        <td><%= property.lightning_protection_level %></td>
+        <td><%= property.has_land_register_record %></td>
+        <td><%= property.has_spezification %></td>
+        <td><%= property.planning_permission %></td>
+        <td><%= property.has_energy_pass %></td>
+        <td><%= property.has_fire_protection_plan %></td>
+        <td><%= property.tanant %></td>
+        <td><%= property.insurance %></td>
+        <td><%= link_to 'Show', property %></td>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property', new_property_path %>
