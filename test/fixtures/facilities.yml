@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  specification: MyString
+  notes: MyText
+  property_id: 
+  base_of_check: MyString
+  facility_category_id: 
+  insurance_facility_id: 
+  amount: 1
+  number: MyString
+
+two:
+  name: MyString
+  specification: MyString
+  notes: MyText
+  property_id: 
+  base_of_check: MyString
+  facility_category_id: 
+  insurance_facility_id: 
+  amount: 1
+  number: MyString
