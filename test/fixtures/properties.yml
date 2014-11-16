@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  city: MyString
+  name: MyString
+  zip: MyString
+  year_of_construction: 2014-11-16
+  owner: MyString
+  company: MyText
+  asset_management: MyString
+  property_management: MyString
+  service_provider: MyString
+  has_garage: false
+  calc_of_rentable_area: MyString
+  plans: MyString
+  lightning_protection_level: MyString
+  has_land_register_record: false
+  has_spezification: false
+  planning_permission: MyString
+  has_energy_pass: false
+  has_fire_protection_plan: false
+  tanant_id: 
+  insurance_id: 
+
+two:
+  address: MyString
+  city: MyString
+  name: MyString
+  zip: MyString
+  year_of_construction: 2014-11-16
+  owner: MyString
+  company: MyText
+  asset_management: MyString
+  property_management: MyString
+  service_provider: MyString
+  has_garage: false
+  calc_of_rentable_area: MyString
+  plans: MyString
+  lightning_protection_level: MyString
+  has_land_register_record: false
+  has_spezification: false
+  planning_permission: MyString
+  has_energy_pass: false
+  has_fire_protection_plan: false
+  tanant_id: 
+  insurance_id: 
