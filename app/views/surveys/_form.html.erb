@@ -1,0 +1,19 @@
+<%= simple_form_for(@survey) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :has_cracks %>
+    <%= f.input :has_maintanance_sticker %>
+    <%= f.input :has_damp_areas %>
+    <%= f.input :has_fire_extinguisher %>
+    <%= f.input :has_maintanance_and_inspection_manuel %>
+    <%= f.input :has_fire_wall %>
+    <%= f.input :has_free_evacuation_route %>
+    <%= f.input :has_closeable_fire_doors %>
+    <%= f.association :property %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

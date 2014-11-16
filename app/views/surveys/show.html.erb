@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Has cracks:</strong>
+  <%= @survey.has_cracks %>
+</p>
+
+<p>
+  <strong>Has maintanance sticker:</strong>
+  <%= @survey.has_maintanance_sticker %>
+</p>
+
+<p>
+  <strong>Has damp areas:</strong>
+  <%= @survey.has_damp_areas %>
+</p>
+
+<p>
+  <strong>Has fire extinguisher:</strong>
+  <%= @survey.has_fire_extinguisher %>
+</p>
+
+<p>
+  <strong>Has maintanance and inspection manuel:</strong>
+  <%= @survey.has_maintanance_and_inspection_manuel %>
+</p>
+
+<p>
+  <strong>Has fire wall:</strong>
+  <%= @survey.has_fire_wall %>
+</p>
+
+<p>
+  <strong>Has free evacuation route:</strong>
+  <%= @survey.has_free_evacuation_route %>
+</p>
+
+<p>
+  <strong>Has closeable fire doors:</strong>
+  <%= @survey.has_closeable_fire_doors %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @survey.property %>
+</p>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>
