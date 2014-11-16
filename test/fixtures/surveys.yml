@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  has_cracks: MyString
+  has_maintanance_sticker: false
+  has_damp_areas: false
+  has_fire_extinguisher: false
+  has_maintanance_and_inspection_manuel: false
+  has_fire_wall: false
+  has_free_evacuation_route: false
+  has_closeable_fire_doors: false
+  property_id: 
+
+two:
+  has_cracks: MyString
+  has_maintanance_sticker: false
+  has_damp_areas: false
+  has_fire_extinguisher: false
+  has_maintanance_and_inspection_manuel: false
+  has_fire_wall: false
+  has_free_evacuation_route: false
+  has_closeable_fire_doors: false
+  property_id: 
