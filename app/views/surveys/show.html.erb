@@ -1,49 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Survey -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Survey %></h1>
+</div>
 
-<p>
-  <strong>Has cracks:</strong>
-  <%= @survey.has_cracks %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_cracks) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_cracks %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_maintanance_sticker) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_maintanance_sticker %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_damp_areas) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_damp_areas %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_fire_extinguisher) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_fire_extinguisher %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_maintanance_and_inspection_manuel) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_maintanance_and_inspection_manuel %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_fire_wall) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_fire_wall %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_free_evacuation_route) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_free_evacuation_route %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:has_closeable_fire_doors) %></dt>
+      <dd><pre class="prettyprint"><%= @survey.has_closeable_fire_doors %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Has maintanance sticker:</strong>
-  <%= @survey.has_maintanance_sticker %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              surveys_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_survey_path(@survey), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              survey_path(@survey),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Has damp areas:</strong>
-  <%= @survey.has_damp_areas %>
-</p>
-
-<p>
-  <strong>Has fire extinguisher:</strong>
-  <%= @survey.has_fire_extinguisher %>
-</p>
-
-<p>
-  <strong>Has maintanance and inspection manuel:</strong>
-  <%= @survey.has_maintanance_and_inspection_manuel %>
-</p>
-
-<p>
-  <strong>Has fire wall:</strong>
-  <%= @survey.has_fire_wall %>
-</p>
-
-<p>
-  <strong>Has free evacuation route:</strong>
-  <%= @survey.has_free_evacuation_route %>
-</p>
-
-<p>
-  <strong>Has closeable fire doors:</strong>
-  <%= @survey.has_closeable_fire_doors %>
-</p>
-
-<p>
-  <strong>Property:</strong>
-  <%= @survey.property %>
-</p>
-
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>

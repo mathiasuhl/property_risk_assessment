@@ -1,19 +1,58 @@
-<%= simple_form_for(@survey) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :has_cracks %>
-    <%= f.input :has_maintanance_sticker %>
-    <%= f.input :has_damp_areas %>
-    <%= f.input :has_fire_extinguisher %>
-    <%= f.input :has_maintanance_and_inspection_manuel %>
-    <%= f.input :has_fire_wall %>
-    <%= f.input :has_free_evacuation_route %>
-    <%= f.input :has_closeable_fire_doors %>
-    <%= f.association :property %>
+<%= form_for @survey, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :has_cracks, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :has_cracks, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :has_maintanance_sticker, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :has_maintanance_sticker, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :has_damp_areas, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :has_damp_areas, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :has_fire_extinguisher, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :has_fire_extinguisher, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :has_maintanance_and_inspection_manuel, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :has_maintanance_and_inspection_manuel, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :has_fire_wall, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :has_fire_wall, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :has_free_evacuation_route, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :has_free_evacuation_route, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :has_closeable_fire_doors, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :has_closeable_fire_doors, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  surveys_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
