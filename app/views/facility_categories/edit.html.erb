@@ -1,6 +1,5 @@
-<h1>Editing facility_category</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @facility_category %> |
-<%= link_to 'Back', facility_categories_path %>
+<%- model_class = FacilityCategory -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => FacilityCategory %></h1>
+</div>
+<%= render :partial => 'form' %>
