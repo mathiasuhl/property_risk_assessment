@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_complete: false
+  protocol: MyString
+  proof: MyString
+
+two:
+  is_complete: false
+  protocol: MyString
+  proof: MyString
