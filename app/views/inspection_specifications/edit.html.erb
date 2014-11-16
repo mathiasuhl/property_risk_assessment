@@ -1,6 +1,5 @@
-<h1>Editing inspection_specification</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @inspection_specification %> |
-<%= link_to 'Back', inspection_specifications_path %>
+<%- model_class = InspectionSpecification -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => InspectionSpecification %></h1>
+</div>
+<%= render :partial => 'form' %>
