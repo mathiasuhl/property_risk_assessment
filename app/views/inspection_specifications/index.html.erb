@@ -1,0 +1,41 @@
+<h1>Listing inspection_specifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Basis</th>
+      <th>Inspector</th>
+      <th>Intervall in years</th>
+      <th>Is first check necessary</th>
+      <th>Inspector first check</th>
+      <th>Facility</th>
+      <th>Inspection</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inspection_specifications.each do |inspection_specification| %>
+      <tr>
+        <td><%= inspection_specification.name %></td>
+        <td><%= inspection_specification.basis %></td>
+        <td><%= inspection_specification.inspector %></td>
+        <td><%= inspection_specification.intervall_in_years %></td>
+        <td><%= inspection_specification.is_first_check_necessary %></td>
+        <td><%= inspection_specification.inspector_first_check %></td>
+        <td><%= inspection_specification.facility %></td>
+        <td><%= inspection_specification.inspection %></td>
+        <td><%= inspection_specification.location %></td>
+        <td><%= link_to 'Show', inspection_specification %></td>
+        <td><%= link_to 'Edit', edit_inspection_specification_path(inspection_specification) %></td>
+        <td><%= link_to 'Destroy', inspection_specification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inspection specification', new_inspection_specification_path %>

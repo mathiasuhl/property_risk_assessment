@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :inspection_specifications
+
   resources :inspections
 
   resources :defects

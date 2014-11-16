@@ -1,0 +1,19 @@
+<%= simple_form_for(@inspection_specification) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :basis %>
+    <%= f.input :inspector %>
+    <%= f.input :intervall_in_years %>
+    <%= f.input :is_first_check_necessary %>
+    <%= f.input :inspector_first_check %>
+    <%= f.association :facility %>
+    <%= f.association :inspection %>
+    <%= f.association :location %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

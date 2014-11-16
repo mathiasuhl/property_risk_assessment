@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @inspection_specification.name %>
+</p>
+
+<p>
+  <strong>Basis:</strong>
+  <%= @inspection_specification.basis %>
+</p>
+
+<p>
+  <strong>Inspector:</strong>
+  <%= @inspection_specification.inspector %>
+</p>
+
+<p>
+  <strong>Intervall in years:</strong>
+  <%= @inspection_specification.intervall_in_years %>
+</p>
+
+<p>
+  <strong>Is first check necessary:</strong>
+  <%= @inspection_specification.is_first_check_necessary %>
+</p>
+
+<p>
+  <strong>Inspector first check:</strong>
+  <%= @inspection_specification.inspector_first_check %>
+</p>
+
+<p>
+  <strong>Facility:</strong>
+  <%= @inspection_specification.facility %>
+</p>
+
+<p>
+  <strong>Inspection:</strong>
+  <%= @inspection_specification.inspection %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @inspection_specification.location %>
+</p>
+
+<%= link_to 'Edit', edit_inspection_specification_path(@inspection_specification) %> |
+<%= link_to 'Back', inspection_specifications_path %>
