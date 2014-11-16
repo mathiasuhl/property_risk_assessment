@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Inspection -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Inspection %></h1>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @inspection.date %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:date) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection.date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:inspector) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection.inspector %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:eq_number) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection.eq_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:protocol_number) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection.protocol_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:protocol_file) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection.protocol_file %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:inspector_company) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection.inspector_company %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Inspector:</strong>
-  <%= @inspection.inspector %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              inspections_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_inspection_path(@inspection), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              inspection_path(@inspection),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Eq number:</strong>
-  <%= @inspection.eq_number %>
-</p>
-
-<p>
-  <strong>Protocol number:</strong>
-  <%= @inspection.protocol_number %>
-</p>
-
-<p>
-  <strong>Facility:</strong>
-  <%= @inspection.facility %>
-</p>
-
-<p>
-  <strong>Protocol file:</strong>
-  <%= @inspection.protocol_file %>
-</p>
-
-<p>
-  <strong>Inspector company:</strong>
-  <%= @inspection.inspector_company %>
-</p>
-
-<%= link_to 'Edit', edit_inspection_path(@inspection) %> |
-<%= link_to 'Back', inspections_path %>
