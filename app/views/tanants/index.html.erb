@@ -1,0 +1,31 @@
+<h1>Listing tanants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Location</th>
+      <th>Address</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tanants.each do |tanant| %>
+      <tr>
+        <td><%= tanant.company %></td>
+        <td><%= tanant.location %></td>
+        <td><%= tanant.address %></td>
+        <td><%= tanant.notes %></td>
+        <td><%= link_to 'Show', tanant %></td>
+        <td><%= link_to 'Edit', edit_tanant_path(tanant) %></td>
+        <td><%= link_to 'Destroy', tanant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tanant', new_tanant_path %>

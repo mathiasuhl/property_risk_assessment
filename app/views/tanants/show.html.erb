@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @tanant.company %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @tanant.location %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @tanant.address %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @tanant.notes %>
+</p>
+
+<%= link_to 'Edit', edit_tanant_path(@tanant) %> |
+<%= link_to 'Back', tanants_path %>
