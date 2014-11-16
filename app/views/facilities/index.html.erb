@@ -1,41 +1,46 @@
-<h1>Listing facilities</h1>
-
-<table>
+<%- model_class = Facility -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Facility %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Specification</th>
-      <th>Notes</th>
-      <th>Property</th>
-      <th>Base of check</th>
-      <th>Facility category</th>
-      <th>Insurance facility</th>
-      <th>Amount</th>
-      <th>Number</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:specification) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:base_of_check) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:number) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @facilities.each do |facility| %>
       <tr>
+        <td><%= facility.id %></td>
         <td><%= facility.name %></td>
         <td><%= facility.specification %></td>
         <td><%= facility.notes %></td>
-        <td><%= facility.property %></td>
         <td><%= facility.base_of_check %></td>
-        <td><%= facility.facility_category %></td>
-        <td><%= facility.insurance_facility %></td>
         <td><%= facility.amount %></td>
         <td><%= facility.number %></td>
-        <td><%= link_to 'Show', facility %></td>
-        <td><%= link_to 'Edit', edit_facility_path(facility) %></td>
-        <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l facility.created_at, format: :long %></td>
+        <td>
+          <%= link_to facility_path(facility), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to facility_path(facility), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Facility', new_facility_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_facility_path,
+            :class => 'btn btn-primary' %>
