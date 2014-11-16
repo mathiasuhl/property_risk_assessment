@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @inspection.date %>
+</p>
+
+<p>
+  <strong>Inspector:</strong>
+  <%= @inspection.inspector %>
+</p>
+
+<p>
+  <strong>Eq number:</strong>
+  <%= @inspection.eq_number %>
+</p>
+
+<p>
+  <strong>Protocol number:</strong>
+  <%= @inspection.protocol_number %>
+</p>
+
+<p>
+  <strong>Facility:</strong>
+  <%= @inspection.facility %>
+</p>
+
+<p>
+  <strong>Protocol file:</strong>
+  <%= @inspection.protocol_file %>
+</p>
+
+<p>
+  <strong>Inspector company:</strong>
+  <%= @inspection.inspector_company %>
+</p>
+
+<%= link_to 'Edit', edit_inspection_path(@inspection) %> |
+<%= link_to 'Back', inspections_path %>
