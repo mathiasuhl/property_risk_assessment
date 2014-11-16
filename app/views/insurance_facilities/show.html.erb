@@ -1,9 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = InsuranceFacility -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => InsuranceFacility %></h1>
+</div>
 
-<p>
-  <strong>Intervall:</strong>
-  <%= @insurance_facility.intervall %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:intervall) %></dt>
+      <dd><pre class="prettyprint"><%= @insurance_facility.intervall %></pre></dd>
+  </dl>
+</div>
 
-<%= link_to 'Edit', edit_insurance_facility_path(@insurance_facility) %> |
-<%= link_to 'Back', insurance_facilities_path %>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              insurance_facilities_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_insurance_facility_path(@insurance_facility), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              insurance_facility_path(@insurance_facility),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+
