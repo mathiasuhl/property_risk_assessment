@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-11-16
+  inspector: MyString
+  eq_number: MyString
+  protocol_number: MyString
+  facility_id: 
+  protocol_file: MyString
+  inspector_company: MyString
+
+two:
+  date: 2014-11-16
+  inspector: MyString
+  eq_number: MyString
+  protocol_number: MyString
+  facility_id: 
+  protocol_file: MyString
+  inspector_company: MyString
