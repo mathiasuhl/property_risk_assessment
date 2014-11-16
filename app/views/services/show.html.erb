@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is complete:</strong>
+  <%= @service.is_complete %>
+</p>
+
+<p>
+  <strong>Protocol:</strong>
+  <%= @service.protocol %>
+</p>
+
+<p>
+  <strong>Proof:</strong>
+  <%= @service.proof %>
+</p>
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>

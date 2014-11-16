@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :services
+
   resources :insurance_facilities
 
   resources :surveys
