@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Tanant -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Tanant %></h1>
+</div>
 
-<p>
-  <strong>Company:</strong>
-  <%= @tanant.company %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company) %></dt>
+      <dd><pre class="prettyprint"><%= @tanant.company %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:location) %></dt>
+      <dd><pre class="prettyprint"><%= @tanant.location %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
+      <dd><pre class="prettyprint"><%= @tanant.address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:notes) %></dt>
+      <dd><pre class="prettyprint"><%= @tanant.notes %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @tanant.location %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              tanants_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_tanant_path(@tanant), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              tanant_path(@tanant),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @tanant.address %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @tanant.notes %>
-</p>
-
-<%= link_to 'Edit', edit_tanant_path(@tanant) %> |
-<%= link_to 'Back', tanants_path %>

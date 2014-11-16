@@ -1,31 +1,42 @@
-<h1>Listing tanants</h1>
-
-<table>
+<%- model_class = Tanant -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Tanant %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Company</th>
-      <th>Location</th>
-      <th>Address</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:company) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tanants.each do |tanant| %>
       <tr>
+        <td><%= tanant.id %></td>
         <td><%= tanant.company %></td>
         <td><%= tanant.location %></td>
         <td><%= tanant.address %></td>
         <td><%= tanant.notes %></td>
-        <td><%= link_to 'Show', tanant %></td>
-        <td><%= link_to 'Edit', edit_tanant_path(tanant) %></td>
-        <td><%= link_to 'Destroy', tanant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l tanant.created_at, format: :long %></td>
+        <td>
+          <%= link_to tanant_path(tanant), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to tanant_path(tanant), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Tanant', new_tanant_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_tanant_path,
+            :class => 'btn btn-primary' %>
