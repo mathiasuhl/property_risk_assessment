@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :facilities
+
   resources :facility_categories
 
   resources :inspection_specifications

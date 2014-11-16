@@ -1,0 +1,41 @@
+<h1>Listing facilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specification</th>
+      <th>Notes</th>
+      <th>Property</th>
+      <th>Base of check</th>
+      <th>Facility category</th>
+      <th>Insurance facility</th>
+      <th>Amount</th>
+      <th>Number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facilities.each do |facility| %>
+      <tr>
+        <td><%= facility.name %></td>
+        <td><%= facility.specification %></td>
+        <td><%= facility.notes %></td>
+        <td><%= facility.property %></td>
+        <td><%= facility.base_of_check %></td>
+        <td><%= facility.facility_category %></td>
+        <td><%= facility.insurance_facility %></td>
+        <td><%= facility.amount %></td>
+        <td><%= facility.number %></td>
+        <td><%= link_to 'Show', facility %></td>
+        <td><%= link_to 'Edit', edit_facility_path(facility) %></td>
+        <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Facility', new_facility_path %>
