@@ -1,0 +1,39 @@
+<h1>Listing defects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Notes</th>
+      <th>Inspection</th>
+      <th>Status</th>
+      <th>Proof of status</th>
+      <th>Proof of order</th>
+      <th>Has confirmed order</th>
+      <th>Service</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @defects.each do |defect| %>
+      <tr>
+        <td><%= defect.level %></td>
+        <td><%= defect.notes %></td>
+        <td><%= defect.inspection %></td>
+        <td><%= defect.status %></td>
+        <td><%= defect.proof_of_status %></td>
+        <td><%= defect.proof_of_order %></td>
+        <td><%= defect.has_confirmed_order %></td>
+        <td><%= defect.service %></td>
+        <td><%= link_to 'Show', defect %></td>
+        <td><%= link_to 'Edit', edit_defect_path(defect) %></td>
+        <td><%= link_to 'Destroy', defect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Defect', new_defect_path %>

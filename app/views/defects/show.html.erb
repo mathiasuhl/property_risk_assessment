@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @defect.level %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @defect.notes %>
+</p>
+
+<p>
+  <strong>Inspection:</strong>
+  <%= @defect.inspection %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @defect.status %>
+</p>
+
+<p>
+  <strong>Proof of status:</strong>
+  <%= @defect.proof_of_status %>
+</p>
+
+<p>
+  <strong>Proof of order:</strong>
+  <%= @defect.proof_of_order %>
+</p>
+
+<p>
+  <strong>Has confirmed order:</strong>
+  <%= @defect.has_confirmed_order %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @defect.service %>
+</p>
+
+<%= link_to 'Edit', edit_defect_path(@defect) %> |
+<%= link_to 'Back', defects_path %>
