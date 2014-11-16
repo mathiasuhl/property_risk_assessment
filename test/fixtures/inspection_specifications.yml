@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  basis: MyString
+  inspector: MyString
+  intervall_in_years: 1
+  is_first_check_necessary: false
+  inspector_first_check: MyString
+  facility_id: 
+  inspection_id: 
+  location_id: 
+
+two:
+  name: MyString
+  basis: MyString
+  inspector: MyString
+  intervall_in_years: 1
+  is_first_check_necessary: false
+  inspector_first_check: MyString
+  facility_id: 
+  inspection_id: 
+  location_id: 
