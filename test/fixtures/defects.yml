@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  level: MyString
+  notes: MyText
+  inspection_id: 
+  status: MyString
+  proof_of_status: MyString
+  proof_of_order: MyString
+  has_confirmed_order: false
+  service_id: 
+
+two:
+  level: MyString
+  notes: MyText
+  inspection_id: 
+  status: MyString
+  proof_of_status: MyString
+  proof_of_order: MyString
+  has_confirmed_order: false
+  service_id: 
