@@ -1,0 +1,25 @@
+<h1>Listing insurance_facilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Intervall</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @insurance_facilities.each do |insurance_facility| %>
+      <tr>
+        <td><%= insurance_facility.intervall %></td>
+        <td><%= link_to 'Show', insurance_facility %></td>
+        <td><%= link_to 'Edit', edit_insurance_facility_path(insurance_facility) %></td>
+        <td><%= link_to 'Destroy', insurance_facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insurance facility', new_insurance_facility_path %>
