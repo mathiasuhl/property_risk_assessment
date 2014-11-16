@@ -1,29 +1,38 @@
-<h1>Listing insurances</h1>
-
-<table>
+<%- model_class = Insurance -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Insurance %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Notes</th>
-      <th>Insurance facility</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @insurances.each do |insurance| %>
       <tr>
+        <td><%= insurance.id %></td>
         <td><%= insurance.name %></td>
         <td><%= insurance.notes %></td>
-        <td><%= insurance.insurance_facility %></td>
-        <td><%= link_to 'Show', insurance %></td>
-        <td><%= link_to 'Edit', edit_insurance_path(insurance) %></td>
-        <td><%= link_to 'Destroy', insurance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l insurance.created_at, format: :long %></td>
+        <td>
+          <%= link_to insurance_path(insurance), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to insurance_path(insurance), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Insurance', new_insurance_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_insurance_path,
+            :class => 'btn btn-primary' %>
