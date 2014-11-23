@@ -1,4 +1,5 @@
 <%= simple_form_for @property do |f| %>
+    <%= f.association :tanant, label_method: :company %>    
     <%= f.input :address %>
     <%= f.input :city %>
     <%= f.input :name %>
@@ -24,4 +25,9 @@
     <%= f.input :has_soil_pollution %>
     <%= f.input :has_keyregister %>
     <%= f.input :has_construction_specification %>  
+  
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit "Speichern", :class => 'btn btn-primary' %>
+    </div>      
+        
 <% end %>
