@@ -1,4 +1,7 @@
+# -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
+  resources :survey_facilities
+
   get 'landings/index'
 
   resources :properties do

@@ -11,23 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123154816) do
-
-  create_table "defects", force: true do |t|
-    t.string   "level"
-    t.text     "notes"
-    t.integer  "inspection_id"
-    t.string   "status"
-    t.string   "proof_of_status"
-    t.string   "proof_of_order"
-    t.boolean  "has_confirmed_order"
-    t.integer  "service_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "defects", ["inspection_id"], name: "index_defects_on_inspection_id", using: :btree
-  add_index "defects", ["service_id"], name: "index_defects_on_service_id", using: :btree
+ActiveRecord::Schema.define(version: 20141123195619) do
 
   create_table "facilities", force: true do |t|
     t.string   "name"
@@ -41,6 +25,8 @@ ActiveRecord::Schema.define(version: 20141123154816) do
     t.string   "number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "has_revision_documents"
+    t.boolean  "has_service_contract"
   end
 
   add_index "facilities", ["facility_category_id"], name: "index_facilities_on_facility_category_id", using: :btree
@@ -81,6 +67,11 @@ ActiveRecord::Schema.define(version: 20141123154816) do
     t.string   "inspector_company"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "notes"
+    t.string   "level"
+    t.string   "status"
+    t.string   "proof_of_status"
+    t.string   "proof_of_order"
   end
 
   add_index "inspections", ["facility_id"], name: "index_inspections_on_facility_id", using: :btree
@@ -153,15 +144,48 @@ ActiveRecord::Schema.define(version: 20141123154816) do
     t.datetime "updated_at"
   end
 
+  create_table "survey_facilities", force: true do |t|
+    t.integer  "survey_id"
+    t.integer  "facility_id"
+    t.boolean  "has_grap_packs"
+    t.boolean  "has_service_stickers"
+    t.boolean  "elevator_emergencey_call_is_working"
+    t.boolean  "elevator_intercom_is_working"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "surveys", force: true do |t|
-    t.string   "has_cracks"
-    t.boolean  "has_maintanance_sticker"
-    t.string   "has_damp_areas"
-    t.boolean  "has_fire_extinguisher"
-    t.boolean  "has_maintanance_and_inspection_manuel"
-    t.boolean  "has_fire_wall"
+    t.boolean  "has_cracks_in_garage"
+    t.boolean  "has_cracks_in_interior_walls"
+    t.boolean  "has_cracks_in_exterior_walls"
+    t.boolean  "has_cracks_in_ceilings"
+    t.boolean  "has_damp_area_in_garage"
+    t.boolean  "has_damp_area_in_interior_walls"
+    t.boolean  "has_damp_area_in_exterior_walls"
+    t.boolean  "has_damp_area_in_ceilings"
+    t.boolean  "has_damp_area_roof_inside"
+    t.boolean  "has_damp_area_roof_windows"
+    t.boolean  "has_damp_area_windows"
+    t.boolean  "has_neat_outdor_facility"
+    t.boolean  "has_neat_disposal_area"
+    t.boolean  "has_clean_garage"
+    t.boolean  "has_neat_roof"
+    t.boolean  "has_working_security_lights"
+    t.boolean  "has_working_escape_lights"
+    t.boolean  "has_working_normal_lights"
+    t.boolean  "has_fire_walls"
+    t.boolean  "is_the_legal_duty_to_maintain_safety_given"
     t.boolean  "has_free_evacuation_route"
+    t.boolean  "is_a_missusage_of_fire_doors_given"
     t.boolean  "has_closeable_fire_doors"
+    t.boolean  "are_panic_doors_working"
+    t.boolean  "is_cold_water_meter_calibrated"
+    t.boolean  "is_warm_water_meter_calibrated"
+    t.boolean  "is_heating_meter_calibrated"
+    t.boolean  "is_air_condition_meter_calibrated"
+    t.boolean  "is_electricity_meter_calibrated"
+    t.boolean  "has_fire_extinguisher"
     t.integer  "property_id"
     t.datetime "created_at"
     t.datetime "updated_at"

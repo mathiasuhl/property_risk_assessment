@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
   before_action :set_property, only: [:create,:new, :show, :edit, :update, :destroy]
@@ -71,9 +72,9 @@ class FacilitiesController < ApplicationController
     def set_property
       @property = Property.find(params[:property_id])
     end
-   
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_params
-      params.require(:facility).permit(:name, :specification, :notes, :property_id, :base_of_check, :facility_category_id, :insurance_facility_id, :amount, :number)
+      params.require(:facility).permit(:name, :specification, :notes, :property_id, :base_of_check, :facility_category_id, :insurance_facility_id, :amount, :number, :has_revision_documents, :has_service_contract)
     end
 end

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateDefects < ActiveRecord::Migration
   def change
     create_table :defects do |t|

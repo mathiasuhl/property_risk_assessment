@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class InspectionsController < ApplicationController
   before_action :set_inspection, only: [:show, :edit, :update, :destroy]
 
@@ -69,6 +70,6 @@ class InspectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inspection_params
-      params.require(:inspection).permit(:date, :inspector, :eq_number, :protocol_number, :facility_id, :protocol_file, :inspector_company)
+      params.require(:inspection).permit(:date, :inspector, :eq_number, :protocol_number, :facility_id, :protocol_file, :inspector_company, :notes,:level, :status, :proof_of_status, :proof_of_order)
     end
 end

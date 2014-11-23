@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 

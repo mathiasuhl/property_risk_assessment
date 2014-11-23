@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  survey_id: 1
+  facility_id: 1
+  has_grap_packs: false
+  has_service_stickers: false
+  elevator_emergencey_call_is_working: false
+  elevator_intercom_is_working: false
+
+two:
+  survey_id: 1
+  facility_id: 1
+  has_grap_packs: false
+  has_service_stickers: false
+  elevator_emergencey_call_is_working: false
+  elevator_intercom_is_working: false

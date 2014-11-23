@@ -22,11 +22,11 @@
 
 <div class="form-group">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              facilities_path, :class => 'btn btn-default'  %>
+              @property, :class => 'btn btn-default'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_facility_path(@facility), :class => 'btn btn-default' %>
+                edit_property_facility_path(@facility,@property), :class => 'btn btn-default' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              facility_path(@facility),
+              property_facility_path(@facility,@property),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class InsurancesController < ApplicationController
   before_action :set_insurance, only: [:show, :edit, :update, :destroy]
 

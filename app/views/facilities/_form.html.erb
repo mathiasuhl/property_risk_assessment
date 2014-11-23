@@ -1,11 +1,15 @@
 <%= simple_form_for [@property,@facility], :html => { :class => 'form-horizontal form-model' } do |f| %>
 
+      <%= f.association :facility_category %>
       <%= f.input :name %>
       <%= f.input :specification %>
       <%= f.input :notes %>
       <%= f.input :base_of_check %>
       <%= f.input :amount %>
       <%= f.input :number %>
+      <%= f.input :has_revision_documents %>
+      <%= f.input :has_service_contract %>
+
 
     <div class='col-md-offset-2 col-md-10'>
       <%= f.submit nil, :class => 'btn btn-primary' %>

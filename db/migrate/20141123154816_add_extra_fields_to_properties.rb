@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddExtraFieldsToProperties < ActiveRecord::Migration
   def change
     add_column :properties, :has_soil_expertise, :boolean

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FacilityCategoriesController < ApplicationController
   before_action :set_facility_category, only: [:show, :edit, :update, :destroy]
 

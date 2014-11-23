@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class InspectionSpecificationsController < ApplicationController
   before_action :set_inspection_specification, only: [:show, :edit, :update, :destroy]
 

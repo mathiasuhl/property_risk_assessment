@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class InsuranceFacilitiesController < ApplicationController
   before_action :set_insurance_facility, only: [:show, :edit, :update, :destroy]
 

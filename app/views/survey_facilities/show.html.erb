@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Survey:</strong>
+  <%= @survey_facility.survey_id %>
+</p>
+
+<p>
+  <strong>Facility:</strong>
+  <%= @survey_facility.facility_id %>
+</p>
+
+<p>
+  <strong>Has grap packs:</strong>
+  <%= @survey_facility.has_grap_packs %>
+</p>
+
+<p>
+  <strong>Has service stickers:</strong>
+  <%= @survey_facility.has_service_stickers %>
+</p>
+
+<p>
+  <strong>Elevator emergencey call is working:</strong>
+  <%= @survey_facility.elevator_emergencey_call_is_working %>
+</p>
+
+<p>
+  <strong>Elevator intercom is working:</strong>
+  <%= @survey_facility.elevator_intercom_is_working %>
+</p>
+
+<%= link_to 'Edit', edit_survey_facility_path(@survey_facility) %> |
+<%= link_to 'Back', survey_facilities_path %>

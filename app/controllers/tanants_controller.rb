@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TanantsController < ApplicationController
   before_action :set_tanant, only: [:show, :edit, :update, :destroy]
 
