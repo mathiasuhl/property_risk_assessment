@@ -1,60 +1,64 @@
 <%- model_class = Property -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => Property %></h1>
+
+<div class="col-md-8">
+    <h3>Object Details</h3>
+  <div class="well">
+    <dl>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
+        <dd><pre class="prettyprint"><%= @property.address %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+        <dd><pre class="prettyprint"><%= @property.city %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+        <dd><pre class="prettyprint"><%= @property.name %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:zip) %></dt>
+        <dd><pre class="prettyprint"><%= @property.zip %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:year_of_construction) %></dt>
+        <dd><pre class="prettyprint"><%= @property.year_of_construction %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:owner) %></dt>
+        <dd><pre class="prettyprint"><%= @property.owner %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:company) %></dt>
+        <dd><pre class="prettyprint"><%= @property.company %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:asset_management) %></dt>
+        <dd><pre class="prettyprint"><%= @property.asset_management %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:property_management) %></dt>
+        <dd><pre class="prettyprint"><%= @property.property_management %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:service_provider) %></dt>
+        <dd><pre class="prettyprint"><%= @property.service_provider %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:has_garage) %></dt>
+        <dd><pre class="prettyprint"><%= @property.has_garage %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:calc_of_rentable_area) %></dt>
+        <dd><pre class="prettyprint"><%= @property.calc_of_rentable_area %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:plans) %></dt>
+        <dd><pre class="prettyprint"><%= @property.plans %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:lightning_protection_level) %></dt>
+        <dd><pre class="prettyprint"><%= @property.lightning_protection_level %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:has_land_register_record) %></dt>
+        <dd><pre class="prettyprint"><%= @property.has_land_register_record %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:has_spezification) %></dt>
+        <dd><pre class="prettyprint"><%= @property.has_spezification %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:planning_permission) %></dt>
+        <dd><pre class="prettyprint"><%= @property.planning_permission %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:has_energy_pass) %></dt>
+        <dd><pre class="prettyprint"><%= @property.has_energy_pass %></pre></dd>
+        <dt class="label label-default"><%= model_class.human_attribute_name(:has_fire_protection_plan) %></dt>
+        <dd><pre class="prettyprint"><%= @property.has_fire_protection_plan %></pre></dd>
+    </dl>
+  </div>
+
+  <div class="form-group">
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                properties_path, :class => 'btn btn-default'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_property_path(@property), :class => 'btn btn-default' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                property_path(@property),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+  </div>
 </div>
 
-<div class="fieldset">
-  <dl>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
-      <dd><pre class="prettyprint"><%= @property.address %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
-      <dd><pre class="prettyprint"><%= @property.city %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
-      <dd><pre class="prettyprint"><%= @property.name %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:zip) %></dt>
-      <dd><pre class="prettyprint"><%= @property.zip %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:year_of_construction) %></dt>
-      <dd><pre class="prettyprint"><%= @property.year_of_construction %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:owner) %></dt>
-      <dd><pre class="prettyprint"><%= @property.owner %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:company) %></dt>
-      <dd><pre class="prettyprint"><%= @property.company %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:asset_management) %></dt>
-      <dd><pre class="prettyprint"><%= @property.asset_management %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:property_management) %></dt>
-      <dd><pre class="prettyprint"><%= @property.property_management %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:service_provider) %></dt>
-      <dd><pre class="prettyprint"><%= @property.service_provider %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:has_garage) %></dt>
-      <dd><pre class="prettyprint"><%= @property.has_garage %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:calc_of_rentable_area) %></dt>
-      <dd><pre class="prettyprint"><%= @property.calc_of_rentable_area %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:plans) %></dt>
-      <dd><pre class="prettyprint"><%= @property.plans %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:lightning_protection_level) %></dt>
-      <dd><pre class="prettyprint"><%= @property.lightning_protection_level %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:has_land_register_record) %></dt>
-      <dd><pre class="prettyprint"><%= @property.has_land_register_record %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:has_spezification) %></dt>
-      <dd><pre class="prettyprint"><%= @property.has_spezification %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:planning_permission) %></dt>
-      <dd><pre class="prettyprint"><%= @property.planning_permission %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:has_energy_pass) %></dt>
-      <dd><pre class="prettyprint"><%= @property.has_energy_pass %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:has_fire_protection_plan) %></dt>
-      <dd><pre class="prettyprint"><%= @property.has_fire_protection_plan %></pre></dd>
-  </dl>
+<div class="col-md-4">
+  <h3> Anlagen</h3>
+   <%= render template: 'facilities/index' %>
 </div>
-
-<div class="form-group">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              properties_path, :class => 'btn btn-default'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_property_path(@property), :class => 'btn btn-default' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              property_path(@property),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
-

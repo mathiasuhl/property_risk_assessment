@@ -1,46 +1,15 @@
-<%= form_for @facility, :html => { :class => 'form-horizontal form-model' } do |f| %>
-  <div class="form-group">
-    <%= f.label :name, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :name, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :specification, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :specification, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :notes, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_area :notes, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :base_of_check, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :base_of_check, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :amount, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.number_field :amount, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :number, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :number, :class => 'text-field form-control' %>
-    </div>
-  </div>
+<%= simple_form_for [@property,@facility], :html => { :class => 'form-horizontal form-model' } do |f| %>
 
-  <div class="form-group">
+      <%= f.input :name %>
+      <%= f.input :specification %>
+      <%= f.input :notes %>
+      <%= f.input :base_of_check %>
+      <%= f.input :amount %>
+      <%= f.input :number %>
+
     <div class='col-md-offset-2 col-md-10'>
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  facilities_path, :class => 'btn btn-default' %>
+                  property_facilities_path(@property), :class => 'btn btn-default' %>
     </div>
-  </div>
 <% end %>

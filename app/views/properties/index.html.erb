@@ -1,11 +1,10 @@
 <%- model_class = Property -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => Property %></h1>
+  <h1>Objekte</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:city) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
@@ -16,23 +15,13 @@
       <th><%= model_class.human_attribute_name(:asset_management) %></th>
       <th><%= model_class.human_attribute_name(:property_management) %></th>
       <th><%= model_class.human_attribute_name(:service_provider) %></th>
-      <th><%= model_class.human_attribute_name(:has_garage) %></th>
-      <th><%= model_class.human_attribute_name(:calc_of_rentable_area) %></th>
-      <th><%= model_class.human_attribute_name(:plans) %></th>
-      <th><%= model_class.human_attribute_name(:lightning_protection_level) %></th>
-      <th><%= model_class.human_attribute_name(:has_land_register_record) %></th>
-      <th><%= model_class.human_attribute_name(:has_spezification) %></th>
-      <th><%= model_class.human_attribute_name(:planning_permission) %></th>
-      <th><%= model_class.human_attribute_name(:has_energy_pass) %></th>
-      <th><%= model_class.human_attribute_name(:has_fire_protection_plan) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @properties.each do |property| %>
       <tr>
-        <td><%= property.id %></td>
         <td><%= property.address %></td>
         <td><%= property.city %></td>
         <td><%= property.name %></td>
@@ -43,16 +32,6 @@
         <td><%= property.asset_management %></td>
         <td><%= property.property_management %></td>
         <td><%= property.service_provider %></td>
-        <td><%= property.has_garage %></td>
-        <td><%= property.calc_of_rentable_area %></td>
-        <td><%= property.plans %></td>
-        <td><%= property.lightning_protection_level %></td>
-        <td><%= property.has_land_register_record %></td>
-        <td><%= property.has_spezification %></td>
-        <td><%= property.planning_permission %></td>
-        <td><%= property.has_energy_pass %></td>
-        <td><%= property.has_fire_protection_plan %></td>
-        <td><%=l property.created_at, format: :long %></td>
         <td>
           <%= link_to property_path(property), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>

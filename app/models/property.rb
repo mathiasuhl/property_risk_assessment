@@ -4,4 +4,10 @@ class Property < ActiveRecord::Base
   has_many :facilities
   has_one :location
   has_one :survey
+
+  enum :calc_of_rentable_area ['keine', 'DIN', 'gif', 'sonstige']
+  emum :plans ['Analog', 'Digital','CAD']
+  enum :lightning_protection_level [' Blitzschutzklasse I',' Blitzschutzklasse II',' Blitzschutzklasse III',' Blitzschutzklasse IV']
+  enum :planning_permission ['Sonderbau', 'Hochhaus', 'Verkaufsstätte']
+
 end

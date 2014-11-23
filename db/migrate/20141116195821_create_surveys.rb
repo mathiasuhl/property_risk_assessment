@@ -3,7 +3,7 @@ class CreateSurveys < ActiveRecord::Migration
     create_table :surveys do |t|
       t.string :has_cracks
       t.boolean :has_maintanance_sticker
-      t.boolean :has_damp_areas
+      t.string :has_damp_areas
       t.boolean :has_fire_extinguisher
       t.boolean :has_maintanance_and_inspection_manuel
       t.boolean :has_fire_wall

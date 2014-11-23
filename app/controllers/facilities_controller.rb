@@ -1,5 +1,6 @@
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
+  before_action :set_property, only: [:new, :show, :edit, :update, :destroy]
 
   # GET /facilities
   # GET /facilities.json
@@ -65,6 +66,10 @@ class FacilitiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_facility
       @facility = Facility.find(params[:id])
+    end
+
+    def set_property
+      @property = Property.find(params[:property_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
