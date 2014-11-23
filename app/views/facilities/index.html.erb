@@ -15,11 +15,10 @@
         <td><%= facility.amount %></td>
         <td><%=l facility.created_at, format: :long %></td>
         <td>
-          <%= link_to property_facilities_path(facility), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
+          <%= link_to property_facility_path(facility), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'pencil' %>
           <%- end -%>
-          <%= link_to property_facilities_path(facility), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+          <%= link_to property_facility_path(facility), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
             <%= glyph 'remove' %>
           <%- end -%>
         </td>

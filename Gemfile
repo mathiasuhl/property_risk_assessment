@@ -25,7 +25,7 @@ end
 
 
 gem 'bundler'
-
+gem 'enum_help'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
 gem 'omniauth-facebook'

@@ -1,6 +1,6 @@
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
-  before_action :set_property, only: [:new, :show, :edit, :update, :destroy]
+  before_action :set_property, only: [:create,:new, :show, :edit, :update, :destroy]
 
   # GET /facilities
   # GET /facilities.json
@@ -15,7 +15,7 @@ class FacilitiesController < ApplicationController
 
   # GET /facilities/new
   def new
-    @facility = Facility.new
+      @facility = @property.facilities.new
   end
 
   # GET /facilities/1/edit
@@ -25,12 +25,12 @@ class FacilitiesController < ApplicationController
   # POST /facilities
   # POST /facilities.json
   def create
-    @facility = Facility.new(facility_params)
+      @facility = @property.facilities.new(facility_params)
 
     respond_to do |format|
       if @facility.save
-        format.html { redirect_to @facility, notice: 'Facility was successfully created.' }
-        format.json { render :show, status: :created, location: @facility }
+        format.html { redirect_to @property, notice: 'Facility was successfully created.' }
+        format.json { render :show, status: :created, location: @property }
       else
         format.html { render :new }
         format.json { render json: @facility.errors, status: :unprocessable_entity }
@@ -43,8 +43,8 @@ class FacilitiesController < ApplicationController
   def update
     respond_to do |format|
       if @facility.update(facility_params)
-        format.html { redirect_to @facility, notice: 'Facility was successfully updated.' }
-        format.json { render :show, status: :ok, location: @facility }
+        format.html { redirect_to @property, notice: 'Facility was successfully updated.' }
+        format.json { render :show, status: :ok, location: @property }
       else
         format.html { render :edit }
         format.json { render json: @facility.errors, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class FacilitiesController < ApplicationController
   def destroy
     @facility.destroy
     respond_to do |format|
-      format.html { redirect_to facilities_url, notice: 'Facility was successfully destroyed.' }
+      format.html { redirect_to @property, notice: 'Facility was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,7 +71,7 @@ class FacilitiesController < ApplicationController
     def set_property
       @property = Property.find(params[:property_id])
     end
-
+   
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_params
       params.require(:facility).permit(:name, :specification, :notes, :property_id, :base_of_check, :facility_category_id, :insurance_facility_id, :amount, :number)
