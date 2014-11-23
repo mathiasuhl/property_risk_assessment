@@ -1,0 +1,6 @@
+de:
+  simple_form:
+    labels:
+      property:
+        address: 'Addresse '
+        city: 'Stadt'

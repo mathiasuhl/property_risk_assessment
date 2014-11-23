@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116195848) do
+ActiveRecord::Schema.define(version: 20141123154816) do
 
   create_table "defects", force: true do |t|
     t.string   "level"
@@ -134,6 +134,12 @@ ActiveRecord::Schema.define(version: 20141116195848) do
     t.integer  "insurance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "has_soil_expertise"
+    t.boolean  "has_electric_meter_per_rentable_areas"
+    t.boolean  "has_plan_landregister"
+    t.boolean  "has_soil_pollution"
+    t.boolean  "has_keyregister"
+    t.boolean  "has_construction_specification"
   end
 
   add_index "properties", ["insurance_id"], name: "index_properties_on_insurance_id", using: :btree

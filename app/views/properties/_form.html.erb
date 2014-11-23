@@ -1,124 +1,27 @@
-<%= form_for @property, :html => { :class => 'form-horizontal form-model' } do |f| %>
-  <div class="form-group">
-    <%= f.label :address, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :address, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :city, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :city, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :name, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :name, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :zip, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :zip, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :year_of_construction, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.date_select :year_of_construction, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :owner, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :owner, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :company, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_area :company, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :asset_management, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :asset_management, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :property_management, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :property_management, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :service_provider, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :service_provider, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :has_garage, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.check_box :has_garage, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :calc_of_rentable_area, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :calc_of_rentable_area, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :plans, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :plans, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :lightning_protection_level, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :lightning_protection_level, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :has_land_register_record, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.check_box :has_land_register_record, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :has_spezification, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.check_box :has_spezification, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :planning_permission, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :planning_permission, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :has_energy_pass, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.check_box :has_energy_pass, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :has_fire_protection_plan, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.check_box :has_fire_protection_plan, :class => 'text-field form-control' %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class='col-md-offset-2 col-md-10'>
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  properties_path, :class => 'btn btn-default' %>
-    </div>
-  </div>
+<%= simple_form_for @property do |f| %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :name %>
+    <%= f.input :zip %>
+    <%= f.input :year_of_construction %>
+    <%= f.input :owner %>
+    <%= f.input :company %>
+    <%= f.input :asset_management %>
+    <%= f.input :property_management %>
+    <%= f.input :service_provider %>
+    <%= f.input :has_garage %>
+    <%= f.input :calc_of_rentable_area %>
+    <%= f.input :plans %>
+    <%= f.input :lightning_protection_level %>
+    <%= f.input :has_land_register_record %>
+    <%= f.input :has_spezification %>
+    <%= f.input :planning_permission %>
+    <%= f.input :has_energy_pass %>
+    <%= f.input :has_fire_protection_plan %>  
+    <%= f.input :has_soil_expertise %>
+    <%= f.input :has_electric_meter_per_rentable_areas %>
+    <%= f.input :has_plan_landregister %>
+    <%= f.input :has_soil_pollution %>
+    <%= f.input :has_keyregister %>
+    <%= f.input :has_construction_specification %>  
 <% end %>
