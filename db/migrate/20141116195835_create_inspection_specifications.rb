@@ -2,7 +2,6 @@
 class CreateInspectionSpecifications < ActiveRecord::Migration
   def change
     create_table :inspection_specifications do |t|
-      t.string :comment_to_facility
       t.string :specification
       t.string :basis_of_check
       t.integer :intervall_in_years
@@ -15,6 +14,7 @@ class CreateInspectionSpecifications < ActiveRecord::Migration
       t.references :facility, index: true
       t.references :facility_category, index: true
       t.references :location, index: true
+      t.references :planning_permission, index: true
 
       t.timestamps
     end

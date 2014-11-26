@@ -1,14 +1,14 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
-  resources :property_has_facilities
 
-  resources :planning_permissions
+
 
   resources :survey_facilities
 
   get 'landings/index'
 
   resources :properties do
+    resources :property_has_facilities
     resources :inspections
     resources :services
     resources :surveys
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :inspection_specifications
   resources :locations
   resources :facilities
-
+  resources :planning_permissions
 
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

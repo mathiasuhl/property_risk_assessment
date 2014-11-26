@@ -1,15 +1,8 @@
-<h1>Listing property_has_facilities</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Number</th>
-      <th>Has revision documents</th>
-      <th>Has service contract</th>
-      <th>Has grap packs</th>
-      <th>Has service stickers</th>
-      <th>Elevator emergencey call is working</th>
-      <th>Elevator intercom is working</th>
+      <th>Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +11,12 @@
     <% @property_has_facilities.each do |property_has_facility| %>
       <tr>
         <td><%= property_has_facility.number %></td>
-        <td><%= property_has_facility.has_revision_documents %></td>
-        <td><%= property_has_facility.has_service_contract %></td>
-        <td><%= property_has_facility.has_grap_packs %></td>
-        <td><%= property_has_facility.has_service_stickers %></td>
-        <td><%= property_has_facility.elevator_emergencey_call_is_working %></td>
-        <td><%= property_has_facility.elevator_intercom_is_working %></td>
-        <td><%= link_to 'Show', property_has_facility %></td>
-        <td><%= link_to 'Edit', edit_property_has_facility_path(property_has_facility) %></td>
-        <td><%= link_to 'Destroy', property_has_facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= property_has_facility.facility.full_name %></td>
+
+
+        <td><%= link_to 'Show',  property_property_has_facility_path(@property,property_has_facility) %></td>
+        <td><%= link_to 'Edit', edit_property_property_has_facility_path(@property,property_has_facility) %></td>
+        <td><%= link_to 'Destroy', property_property_has_facility_path(@property,property_has_facility), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Property has facility', new_property_has_facility_path %>
+<%= link_to 'Neue Anlage dem Objekt zuweisen', new_property_property_has_facility_path(@property) %>

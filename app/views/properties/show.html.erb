@@ -105,8 +105,13 @@
 </div>
 
 <div class="col-md-4">
-  <h3> Anlagen</h3>
-   <%= render template: 'facilities/index' %>
+  <h3> Anlagen des Objektes</h3>
+  <% if @property.property_has_facilities %>
+    <%= render template: 'property_has_facilities/index' %>
+  <% else %>
+    <%= link_to 'Anlage dem Objekt zuweisen', new_property_property_has_facility_path(@property) %>
+  <% end -%>
+
 </div>
 
 

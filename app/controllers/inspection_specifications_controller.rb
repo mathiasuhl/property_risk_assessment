@@ -70,6 +70,6 @@ class InspectionSpecificationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inspection_specification_params
-      params.require(:inspection_specification).permit(:name, :basis, :inspector, :intervall_in_years, :is_first_check_necessary, :inspector_first_check, :facility_id, :inspection_id, :location_id, :planning_permission_id, :facility_category_id, :description)
+      params.require(:inspection_specification).permit(:specification ,:basis_of_check ,:intervall_in_years ,:intervall_information ,:kind_of_check ,:first_check ,:first_check_information ,:comment, :facility_id, :location_id, :planning_permission_id, :facility_category_id)
     end
 end

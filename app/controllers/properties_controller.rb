@@ -11,7 +11,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
-    @facilities = @property.facilities
+    @property_has_facilities = @property.property_has_facilities
   end
 
   # GET /properties/new
@@ -67,15 +67,15 @@ class PropertiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_property
       @property = Property.find(params[:id])
-        @insurances = @property.insurance
-      @surveys =  @property.survey 
+
+      @surveys =  @property.survey
     end
 
 
-    
-    
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:address, :city, :name, :zip, :year_of_construction, :owner, :company, :asset_management, :property_management, :service_provider, :has_garage, :calc_of_rentable_area, :plans, :lightning_protection_level, :has_land_register_record, :has_spezification, :planning_permission, :has_energy_pass, :has_fire_protection_plan, :tanant_id, :insurance_id, :has_soil_expertise, :has_electric_meter_per_rentable_areas, :has_plan_landregister, :has_soil_pollution, :has_keyregister, :has_construction_specification )
+      params.require(:property).permit(:address, :city, :name, :zip, :year_of_construction, :owner, :company, :asset_management, :property_management, :service_provider, :has_garage, :calc_of_rentable_area, :plans, :lightning_protection_level, :has_land_register_record, :has_spezification, :planning_permission, :has_energy_pass, :has_fire_protection_plan, :tanant_id, :insurance_id, :has_soil_expertise, :has_electric_meter_per_rentable_areas, :has_plan_landregister, :has_soil_pollution, :has_keyregister, :has_construction_specification, :planning_permission_id, :calc_of_rentable_area, :lightning_protection_level )
     end
 end

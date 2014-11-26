@@ -1,22 +1,35 @@
 <%- model_class = InspectionSpecification -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => InspectionSpecification %></h1>
+  <h1>Prüfungsverordnung</h1>
 </div>
 
 <div class="fieldset">
   <dl>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
-      <dd><pre class="prettyprint"><%= @inspection_specification.name %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:basis) %></dt>
-      <dd><pre class="prettyprint"><%= @inspection_specification.basis %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:inspector) %></dt>
-      <dd><pre class="prettyprint"><%= @inspection_specification.inspector %></pre></dd>
+
+      <dt class="label label-default"><%= model_class.human_attribute_name(:specification) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection_specification.specification %></pre></dd>
+
+      <dt class="label label-default"><%= model_class.human_attribute_name(:basis_of_check) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection_specification.basis_of_check %></pre></dd>
+
       <dt class="label label-default"><%= model_class.human_attribute_name(:intervall_in_years) %></dt>
       <dd><pre class="prettyprint"><%= @inspection_specification.intervall_in_years %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:is_first_check_necessary) %></dt>
-      <dd><pre class="prettyprint"><%= @inspection_specification.is_first_check_necessary %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:inspector_first_check) %></dt>
-      <dd><pre class="prettyprint"><%= @inspection_specification.inspector_first_check %></pre></dd>
+
+      <dt class="label label-default"><%= model_class.human_attribute_name(:intervall_information) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection_specification.intervall_information %></pre></dd>
+
+      <dt class="label label-default"><%= model_class.human_attribute_name(:kind_of_check) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection_specification.kind_of_check %></pre></dd>
+
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_check) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection_specification.first_check %></pre></dd>
+
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_check_information) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection_specification.first_check_information %></pre></dd>
+
+      <dt class="label label-default"><%= model_class.human_attribute_name(:comment) %></dt>
+      <dd><pre class="prettyprint"><%= @inspection_specification.comment %></pre></dd>
+
   </dl>
 </div>
 

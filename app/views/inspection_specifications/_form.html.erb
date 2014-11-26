@@ -6,13 +6,14 @@
   <%= f.association :planning_permission %>
 
 
-  <%= f.input :name %>
-  <%= f.input :basis %>
-  <%= f.input :inspector %>
+  <%= f.input :specification %>
+  <%= f.input :basis_of_check %>
   <%= f.input :intervall_in_years %>
-  <%= f.input :is_first_check_necessary %>
-  <%= f.input :inspector_first_check %>
-  <%= f.input :description %>
+  <%= f.input :intervall_information %>
+  <%= f.input :kind_of_check %>
+  <%= f.input :first_check %>
+  <%= f.input :first_check_information %>
+  <%= f.input :comment %>
 
   <div class='col-md-offset-2 col-md-10'>
     <%= f.submit nil, :class => 'btn btn-primary' %>

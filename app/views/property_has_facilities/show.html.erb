@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @property_has_facility.facility.full_name %>
+</p>
+
+
+
+<p>
   <strong>Number:</strong>
   <%= @property_has_facility.number %>
 </p>
@@ -35,5 +42,5 @@
   <%= @property_has_facility.elevator_intercom_is_working %>
 </p>
 
-<%= link_to 'Edit', edit_property_has_facility_path(@property_has_facility) %> |
-<%= link_to 'Back', property_has_facilities_path %>
+<%= link_to 'Edit', edit_property_property_has_facility_path(@property,@property_has_facility) %> |
+<%= link_to 'Back', @property %>

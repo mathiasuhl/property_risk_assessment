@@ -5,6 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <td> Score</td>
       <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:city) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr>
+        <td><%= property.score %></td>
         <td><%= property.address %></td>
         <td><%= property.city %></td>
         <td><%= property.name %></td>

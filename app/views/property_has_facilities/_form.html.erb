@@ -1,7 +1,9 @@
-<%= simple_form_for(@property_has_facility) do |f| %>
+<%= simple_form_for([@property,@property_has_facility]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
+    <%= f.association :facility, label_method: :full_name %>
     <%= f.input :number %>
     <%= f.input :has_revision_documents %>
     <%= f.input :has_service_contract %>
