@@ -1,46 +1,22 @@
-<%= form_for @inspection_specification, :html => { :class => 'form-horizontal form-model' } do |f| %>
-  <div class="form-group">
-    <%= f.label :name, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :name, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :basis, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :basis, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :inspector, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :inspector, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :intervall_in_years, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.number_field :intervall_in_years, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :is_first_check_necessary, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.check_box :is_first_check_necessary, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :inspector_first_check, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :inspector_first_check, :class => 'text-field form-control' %>
-    </div>
-  </div>
+<%= simple_form_for @inspection_specification, :html => { :class => 'form-horizontal form-model' } do |f| %>
 
-  <div class="form-group">
-    <div class='col-md-offset-2 col-md-10'>
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  inspection_specifications_path, :class => 'btn btn-default' %>
-    </div>
+  <%= f.association :location %>
+  <%= f.association :facility, label_method: :full_name %>
+  <%= f.association :facility_category %>
+  <%= f.association :planning_permission %>
+
+
+  <%= f.input :name %>
+  <%= f.input :basis %>
+  <%= f.input :inspector %>
+  <%= f.input :intervall_in_years %>
+  <%= f.input :is_first_check_necessary %>
+  <%= f.input :inspector_first_check %>
+  <%= f.input :description %>
+
+  <div class='col-md-offset-2 col-md-10'>
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      inspection_specifications_path, :class => 'btn btn-default' %>≈≈≈≈“
   </div>
 <% end %>

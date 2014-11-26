@@ -1,22 +1,18 @@
 <%- model_class = FacilityCategory -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => FacilityCategory %></h1>
+  <h1>Gewerke</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @facility_categories.each do |facility_category| %>
       <tr>
-        <td><%= facility_category.id %></td>
         <td><%= facility_category.name %></td>
-        <td><%=l facility_category.created_at, format: :long %></td>
         <td>
           <%= link_to facility_category_path(facility_category), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>

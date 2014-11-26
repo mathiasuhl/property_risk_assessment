@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123195619) do
+ActiveRecord::Schema.define(version: 20141126195705) do
 
   create_table "facilities", force: true do |t|
     t.string   "name"
@@ -46,14 +46,16 @@ ActiveRecord::Schema.define(version: 20141123195619) do
     t.integer  "intervall_in_years"
     t.boolean  "is_first_check_necessary"
     t.string   "inspector_first_check"
-    t.integer  "facility_id"
+    t.integer  "facility_category_id"
     t.integer  "inspection_id"
     t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "planning_permission_id"
+    t.text     "description"
   end
 
-  add_index "inspection_specifications", ["facility_id"], name: "index_inspection_specifications_on_facility_id", using: :btree
+  add_index "inspection_specifications", ["facility_category_id"], name: "index_inspection_specifications_on_facility_id", using: :btree
   add_index "inspection_specifications", ["inspection_id"], name: "index_inspection_specifications_on_inspection_id", using: :btree
   add_index "inspection_specifications", ["location_id"], name: "index_inspection_specifications_on_location_id", using: :btree
 
@@ -101,6 +103,12 @@ ActiveRecord::Schema.define(version: 20141123195619) do
 
   add_index "locations", ["property_id"], name: "index_locations_on_property_id", using: :btree
 
+  create_table "planning_permissions", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "properties", force: true do |t|
     t.string   "address"
     t.string   "city"
@@ -118,7 +126,7 @@ ActiveRecord::Schema.define(version: 20141123195619) do
     t.string   "lightning_protection_level"
     t.boolean  "has_land_register_record"
     t.boolean  "has_spezification"
-    t.string   "planning_permission"
+    t.integer  "planning_permission_id"
     t.boolean  "has_energy_pass"
     t.boolean  "has_fire_protection_plan"
     t.integer  "tanant_id"
@@ -135,6 +143,23 @@ ActiveRecord::Schema.define(version: 20141123195619) do
 
   add_index "properties", ["insurance_id"], name: "index_properties_on_insurance_id", using: :btree
   add_index "properties", ["tanant_id"], name: "index_properties_on_tanant_id", using: :btree
+
+  create_table "property_has_facilities", force: true do |t|
+    t.string   "number"
+    t.boolean  "has_revision_documents"
+    t.boolean  "has_service_contract"
+    t.boolean  "has_grap_packs"
+    t.boolean  "has_service_stickers"
+    t.boolean  "elevator_emergencey_call_is_working"
+    t.boolean  "elevator_intercom_is_working"
+    t.integer  "property_id"
+    t.integer  "facility_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "property_has_facilities", ["facility_id"], name: "index_property_has_facilities_on_facility_id", using: :btree
+  add_index "property_has_facilities", ["property_id"], name: "index_property_has_facilities_on_property_id", using: :btree
 
   create_table "services", force: true do |t|
     t.boolean  "is_complete"

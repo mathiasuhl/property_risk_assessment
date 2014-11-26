@@ -18,11 +18,12 @@ class CreateProperties < ActiveRecord::Migration
       t.string :lightning_protection_level
       t.boolean :has_land_register_record
       t.boolean :has_spezification
-      t.string :planning_permission
       t.boolean :has_energy_pass
       t.boolean :has_fire_protection_plan
       t.references :tanant, index: true
       t.references :insurance, index: true
+      t.references :planning_permission_id, index: true
+
 
       t.timestamps
     end

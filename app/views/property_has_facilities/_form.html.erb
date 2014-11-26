@@ -1,0 +1,17 @@
+<%= simple_form_for(@property_has_facility) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :number %>
+    <%= f.input :has_revision_documents %>
+    <%= f.input :has_service_contract %>
+    <%= f.input :has_grap_packs %>
+    <%= f.input :has_service_stickers %>
+    <%= f.input :elevator_emergencey_call_is_working %>
+    <%= f.input :elevator_intercom_is_working %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

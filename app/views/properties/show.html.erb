@@ -1,48 +1,94 @@
+
 <%- model_class = Property -%>
 
 <div class="col-md-8">
     <h3>Object Details</h3>
   <div class="well">
-    <dl>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
-        <dd><pre class="prettyprint"><%= @property.address %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
-        <dd><pre class="prettyprint"><%= @property.city %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
-        <dd><pre class="prettyprint"><%= @property.name %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:zip) %></dt>
-        <dd><pre class="prettyprint"><%= @property.zip %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:year_of_construction) %></dt>
-        <dd><pre class="prettyprint"><%= @property.year_of_construction %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:owner) %></dt>
-        <dd><pre class="prettyprint"><%= @property.owner %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:company) %></dt>
-        <dd><pre class="prettyprint"><%= @property.company %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:asset_management) %></dt>
-        <dd><pre class="prettyprint"><%= @property.asset_management %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:property_management) %></dt>
-        <dd><pre class="prettyprint"><%= @property.property_management %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:service_provider) %></dt>
-        <dd><pre class="prettyprint"><%= @property.service_provider %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:has_garage) %></dt>
-        <dd><pre class="prettyprint"><%= @property.has_garage %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:calc_of_rentable_area) %></dt>
-        <dd><pre class="prettyprint"><%= @property.calc_of_rentable_area %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:plans) %></dt>
-        <dd><pre class="prettyprint"><%= @property.plans %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:lightning_protection_level) %></dt>
-        <dd><pre class="prettyprint"><%= @property.lightning_protection_level %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:has_land_register_record) %></dt>
-        <dd><pre class="prettyprint"><%= @property.has_land_register_record %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:has_spezification) %></dt>
-        <dd><pre class="prettyprint"><%= @property.has_spezification %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:planning_permission) %></dt>
-        <dd><pre class="prettyprint"><%= @property.planning_permission %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:has_energy_pass) %></dt>
-        <dd><pre class="prettyprint"><%= @property.has_energy_pass %></pre></dd>
-        <dt class="label label-default"><%= model_class.human_attribute_name(:has_fire_protection_plan) %></dt>
-        <dd><pre class="prettyprint"><%= @property.has_fire_protection_plan %></pre></dd>
-    </dl>
+    <table class="table">
+      <tr>
+        <td><%= model_class.human_attribute_name(:address) %></td>
+        <td><%= @property.address %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:city) %></td>
+        <td><%= @property.city %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:name) %></td>
+        <td><%= @property.name %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:zip) %></td>
+        <td><%= @property.zip %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:year_of_construction) %></td>
+        <td><%= l @property.year_of_construction %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:owner) %></td>
+        <td><%= @property.owner %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:company) %></td>
+        <td><%= @property.company %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:asset_management) %></td>
+        <td><%= @property.asset_management %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:property_management) %></td>
+        <td><%= @property.property_management %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:service_provider) %></td>
+        <td><%= @property.service_provider %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:has_garage) %></td>
+        <td><%= @property.has_garage %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:calc_of_rentable_area) %></td>
+        <td><%= @property.calc_of_rentable_area %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:plans) %></td>
+        <td><%= @property.plans %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:lightning_protection_level) %></td>
+        <td><%= @property.lightning_protection_level %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:has_land_register_record) %></td>
+        <td><%= @property.has_land_register_record %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:has_spezification) %></td>
+        <td><%= @property.has_spezification %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:planning_permission) %></td>
+        <td><%= @property.planning_permission %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:has_energy_pass) %></td>
+        <td><%= @property.has_energy_pass %> </td>
+      </tr>
+      <tr>
+        <td><%= model_class.human_attribute_name(:has_fire_protection_plan) %></td>
+        <td><%= @property.has_fire_protection_plan %> </td>
+      </tr>
+    </table>
+
+  <h4> Aktuelle Begehung</h5>
+  <% if @survey %>
+   <%= render template: 'surveys/show' %>
+  <% end %>
+
+
   </div>
 
   <div class="form-group">
@@ -62,21 +108,6 @@
   <h3> Anlagen</h3>
    <%= render template: 'facilities/index' %>
 </div>
-    
-<div class="col-md-4">
-  <h3> Versicherung</h3>
-   <% if @insurance %>
-    <%= render template: 'insurances/show' %>
-   <% end %>       
-</div>
-    
-<div class="col-md-4">
-  <h3> Begehungen</h3>
-  <% if @survey %>
-   <%= render template: 'surveys/show' %>
-  <% end %>
-</div>
-    
-    
-    
-    
+
+
+

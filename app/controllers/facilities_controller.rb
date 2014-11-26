@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
-  before_action :set_property, only: [:create,:new, :show, :edit, :update, :destroy]
 
   # GET /facilities
   # GET /facilities.json
@@ -16,7 +15,7 @@ class FacilitiesController < ApplicationController
 
   # GET /facilities/new
   def new
-      @facility = @property.facilities.new
+      @facility = Facility.new
   end
 
   # GET /facilities/1/edit
@@ -26,11 +25,11 @@ class FacilitiesController < ApplicationController
   # POST /facilities
   # POST /facilities.json
   def create
-      @facility = @property.facilities.new(facility_params)
+      @facility = Facility.new(facility_params)
 
     respond_to do |format|
       if @facility.save
-        format.html { redirect_to @property, notice: 'Facility was successfully created.' }
+        format.html { redirect_to facilities_path, notice: 'Facility was successfully created.' }
         format.json { render :show, status: :created, location: @property }
       else
         format.html { render :new }
@@ -69,12 +68,8 @@ class FacilitiesController < ApplicationController
       @facility = Facility.find(params[:id])
     end
 
-    def set_property
-      @property = Property.find(params[:property_id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_params
-      params.require(:facility).permit(:name, :specification, :notes, :property_id, :base_of_check, :facility_category_id, :insurance_facility_id, :amount, :number, :has_revision_documents, :has_service_contract)
+      params.require(:facility).permit(:name, :specification, :description, :comment, :facility_category_id )
     end
 end

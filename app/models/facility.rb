@@ -8,11 +8,15 @@ class Facility < ActiveRecord::Base
   has_many :services
 
 
+  def full_name
+    name+', '+specification.truncate(20)+', '+description.truncate(20)
+  end
+
   def score
     score_value  = 0
 
-    score_value++ unless has_revision_documents?
-    score_value++ unless has_service_contract?
+    score_value+1 unless has_revision_documents?
+    score_value+1 unless has_service_contract?
 
 
     score_value = score_value + self.services.last.score

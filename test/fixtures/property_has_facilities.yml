@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  has_revision_documents: false
+  has_service_contract: false
+  has_grap_packs: false
+  has_service_stickers: false
+  elevator_emergencey_call_is_working: false
+  elevator_intercom_is_working: false
+
+two:
+  number: MyString
+  has_revision_documents: false
+  has_service_contract: false
+  has_grap_packs: false
+  has_service_stickers: false
+  elevator_emergencey_call_is_working: false
+  elevator_intercom_is_working: false

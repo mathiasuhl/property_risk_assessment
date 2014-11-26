@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @property_has_facility.number %>
+</p>
+
+<p>
+  <strong>Has revision documents:</strong>
+  <%= @property_has_facility.has_revision_documents %>
+</p>
+
+<p>
+  <strong>Has service contract:</strong>
+  <%= @property_has_facility.has_service_contract %>
+</p>
+
+<p>
+  <strong>Has grap packs:</strong>
+  <%= @property_has_facility.has_grap_packs %>
+</p>
+
+<p>
+  <strong>Has service stickers:</strong>
+  <%= @property_has_facility.has_service_stickers %>
+</p>
+
+<p>
+  <strong>Elevator emergencey call is working:</strong>
+  <%= @property_has_facility.elevator_emergencey_call_is_working %>
+</p>
+
+<p>
+  <strong>Elevator intercom is working:</strong>
+  <%= @property_has_facility.elevator_intercom_is_working %>
+</p>
+
+<%= link_to 'Edit', edit_property_has_facility_path(@property_has_facility) %> |
+<%= link_to 'Back', property_has_facilities_path %>

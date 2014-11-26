@@ -1,0 +1,80 @@
+facility_category,name,specification,description
+2,Anlagen in explosionsgefährdeten Beriechen,Explosionsgefährdete Anlagen und Geräte,
+3,Aufzugsanlagen,"Personen und Lasten
+Aufzüge",im Sinne der Aufzugsrichtlinie 95/16/EG  (i.d.R. Personen- und Lastenaufzüge)
+3,Aufzugsanlagen,Aufzüge nur zum Gütertransport,betretbar mit Steuereinrichtung im Innern des Fahrkorbs oder in Reichweite nach AufzRL 95/16/EG
+3,Aufzugsanlagen,Aufzüge nur zum Gütertransport,nach MaschRL 2006/42/EG
+3,Aufzugsanlagen,Behindertenaufzüge,"Anlage IV, Nr. 17  MaschRL 2006/42/EG"
+3,Aufzugsanlagen,Fassadenaufzüge,"Anlage IV, Nr. 17  MaschRL 2006/42/EG"
+3,Aufzugsanlagen,Überwachungsbedürftige Anlagen,"Anlage IV, Nr. 17  MaschRL 2006/42/EG"
+3,Maschinen zum Heben von Personen,zum Heben von Personen (Absturzhöhe > 3m),"Hubarbeitsbühnen, Hubtische, Hubladebühnen, Hängende Personenaufnahmemittel, Mastgeführte Kletterbühnen, Ladebrücken, "
+3,Fahrtreppen / Fahrsteige,,ugs. Rolltreppen
+3,Aufzugsanlagen (egentl. Stetigförderer),"Personen-Umlaufaufzüge (""Paternoster""): dürfen nicht mehr errichtet werden",
+4,Brückenbauwerke,,
+2,Druckbehälter,Betrieb,
+2,Druckbehälter,Betrieb,
+2,Druckbehälter,Betrieb,
+2,Rohrleitung für Fluide unter innerem Überdruck,"unter Innerem Überdruck für entzündliche, leicht entzündliche, hoch entzündliche, ätzende, giftige, sehr giftige Fluide",
+2,Rohrleitung für Fluide unter innerem Überdruck,"unter Innerem Überdruck für entzündliche, leicht entzündliche, hoch entzündliche, ätzende, giftige, sehr giftige Fluide",
+2,Dampfkessel,,
+2,Dampfkessel,,
+2,Dampfkessel,,
+5,Feuerungsanlage,"besondere feste oder flüssige Brennstoffe > 100kW
+feste Brennstoffe z.B. Kohle, Holz, Heizöl (außer Heizöl EL) > 1MW
+besondere gasförmige Brennstoffe > 10MW
+flüssige und gasförmige Brennstoffe >20MV",
+4,Fliegende Bauten,"Achterbahnen, Fahrgschäfte",
+,Flüssiggasanlage,Verbrauchsanlage,
+,Flüssigkeitsstrahler,Hochdruckreiniger,
+3,Hebezeuge und Förderanlagen,Hebebühne,
+3,Hebezeuge und Förderanlagen,Krane,"eher bei Produktionsbetrieben, kann jedoch z.B. auf dem Dach installiert sein oder eine Verladeeinrichtung sein"
+3,Hebezeuge und Förderanlagen,Krane,"eher bei Produktionsbetrieben, kann jedoch z.B. auf dem Dach installiert sein oder eine Verladeeinrichtung sein"
+5,Heizungsanlagen,">0,3 MW",
+5,Heizungsanlagen, >4kW in Gebäuden,
+6,Kälteanlagen,,
+6,Kälteanlagen,Kälteanlage und Kühleinrichtung,
+6,Kälteanlagen,Kälteanlage und Kühleinrichtung,
+6,Kälteanlagen,mit zentraler Luftbefeuchtung,
+6,Kälteanlagen,ohne zentrale Luftbefeuchtung,
+6,Raumlufttechnische Anlagen,mit zentraler Luftbefeuchtung,
+6,Raumlufttechnische Anlagen,ohne zentrale Luftbefeuchtung,
+6,Kälteanlagen,aktiv bewegte flexible Kältemittelleitungen,z.B. Schläuche
+6,Kälteanlagen,in Gebäuden >12kW,
+7,"Kraftbetätigkte Fenster, Türen und Tore","Automatiktür, Sektionaltor, Schiebetür, Rolltor, Schranke",
+7,"Kraftbetätigkte Fenster, Türen und Tore","Automatiktür, Sektionaltor, Schiebetür, Rolltor, Schranke",
+7,Schiebetüren in Flucht- und Rettungswegen,,
+4,Lärmschutzwände,,
+2,Maschinen,allgemein,
+2,Rohrfernleitungen,Gashochdruckleitungen,
+2,Rohrfernleitungen,gefährliche Stoffe,
+2,Rohrfernleitungen,wassergefährdende Stoffe,
+1,Schutz- und Überwachungseinrichtungen,,
+5,Stahlschornstein,,
+4,Standsicherheit baulicher Anlagen,,
+4,Standsicherheit baulicher Anlagen,,
+4,Standsicherheit baulicher Anlagen,,
+4,Stützmauern,,"Zum Abstützen von Gefällen, Erdreich oder Steinen"
+2,Veranstaltungs- und Produktionsstätten für szenische Darstellung,,
+2,Veranstaltungs- und Produktionsstätten für szenische Darstellung,,
+2,Verkehrseinrichtungen,,"Vehrseinrichtungen sind Schranken, Sperrpfosten, Absperrgeräte sowie Leiteinrichtungen, die bis auf Leitpfosten, Leitschwellen und Leitborde rot-weiß gestreift sind"
+2,Verkehrszeichen,,
+2,Wäscherei,,
+2,Wassergefährdende Stoffe,,
+1,Wasserheizungsanalge,,
+4,wasserstauende Anlagen,,"Damm, Hochwasser Auffangbecken"
+9,Feuerlöscher,,
+4,Fassade,,
+4,Türe/ Tore,Türen,
+9,Türe/ Tore,Brandschutztüren,
+10,Trinkwasserversorgung/ Sanitär,Trinkwasserqualität,
+10,Fettabscheider,,
+10,Hebeanlage,,
+10,Rohrbegleitheizung,,
+10,Ölabscheider,,
+10,Druckerhöhungsanlage,,
+2,Autoparksystem,Doppelgaragen,
+1,USV,,
+1,Netzersatzanlage,,
+2,Personenvereinzelungsanlage,,
+4,Dach,,
+1,Einbruchmeldeanlage,,

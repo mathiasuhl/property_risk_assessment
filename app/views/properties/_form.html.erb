@@ -1,5 +1,8 @@
 <%= simple_form_for @property do |f| %>
-    <%= f.association :tanant, label_method: :company %>    
+
+    <%= f.association :tanant, label_method: :company %>
+    <%= f.association :planning_permission, label_method: :name %>
+
     <%= f.input :address %>
     <%= f.input :city %>
     <%= f.input :name %>
@@ -16,18 +19,20 @@
     <%= f.input :lightning_protection_level %>
     <%= f.input :has_land_register_record %>
     <%= f.input :has_spezification %>
-    <%= f.input :planning_permission %>
     <%= f.input :has_energy_pass %>
-    <%= f.input :has_fire_protection_plan %>  
+    <%= f.input :has_fire_protection_plan %>
     <%= f.input :has_soil_expertise %>
     <%= f.input :has_electric_meter_per_rentable_areas %>
     <%= f.input :has_plan_landregister %>
     <%= f.input :has_soil_pollution %>
     <%= f.input :has_keyregister %>
-    <%= f.input :has_construction_specification %>  
-  
+    <%= f.input :has_construction_specification %>
+    <%= f.association :insurance, label_method: :name %>
+
+
+
     <div class='col-md-offset-2 col-md-10'>
       <%= f.submit "Speichern", :class => 'btn btn-primary' %>
-    </div>      
-        
+    </div>
+
 <% end %>

@@ -2,14 +2,18 @@
 class CreateInspectionSpecifications < ActiveRecord::Migration
   def change
     create_table :inspection_specifications do |t|
-      t.string :name
-      t.string :basis
-      t.string :inspector
+      t.string :comment_to_facility
+      t.string :specification
+      t.string :basis_of_check
       t.integer :intervall_in_years
-      t.boolean :is_first_check_necessary
-      t.string :inspector_first_check
+      t.string :intervall_information
+      t.string :kind_of_check
+      t.string :first_check
+      t.string :first_check_information
+      t.string :comment
+
       t.references :facility, index: true
-      t.references :inspection, index: true
+      t.references :facility_category, index: true
       t.references :location, index: true
 
       t.timestamps
